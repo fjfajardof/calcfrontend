@@ -4,8 +4,8 @@ mibtn.addEventListener( //event listener para que el botón haga una acción lue
    async (event)=>{ // Es una función asíncrona, por eso lleva el ASync
     event.preventDefault(); // el preventdefault es para sólo tomar el valor que se necesita del evento.
 
-    const numero_1=document.getElementById("num1").value; //estos son los valores que espera el backend
-    const numero_2=document.getElementById("num2").value;
+    const numero_1=parseFloat(document.getElementById("num1").value); //estos son los valores que espera el backend, con parse float se convierte de string a número flotante
+    const numero_2=parseFloat(document.getElementById("num2").value);
     const respuesta= await fetch ( //fetch es una promesa, sele añade el await para que espera la respuesta del back
         "http://localhost:3000/api/sumar", //puerto del backend
         {//objeto json con tres elementos de la petición:
